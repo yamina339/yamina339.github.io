@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="pagedejeu.css" rel="stylesheet" type="text/css" />
+    <title>LA ROULETTE</title>
+</head>
+
+<body>
+    <div id="entete">
+        <marquee scrollamont="8">
+          <span id="jeu de roulette">
+            <h1>BIENVENUE AU JEU CASINO LA ROULETTE JOUER ET TENTER DE GAGNER LE GROS LOT... </h1>
+            <div id="flotte"></div>
+        </marquee>
+        </div>
+        <br>
+        <h2 id="h2">choississez un nombre entre 1 et 36 et la parité puis <label for="number" type=number>
+            misez la somme souhaitée
+          </label></h2>
+        <br>
+       
+        <h3 id="h3">
+            
+    
+    <div>
+        <label for="pari">Votre pari</label>
+        <select name="pari" id="pari">
+            <option value="Pair"> Pair</option>
+            <option value="Impair"> Impair</option>
+            <option value="1"> 1</option>
+            <option value="2"> 2</option>
+            <option value="3"> 3</option>
+            <option value="4"> 4</option>
+            <option value="5"> 5</option>
+            <option value="6"> 6</option>
+            <option value="7"> 7</option>
+            <option value="8"> 8</option>
+            <option value="9"> 9</option>
+            <option value="10"> 10</option>
+            <option value="11"> 11</option>
+            <option value="12"> 12</option>
+            <option value="13"> 13</option>
+            <option value="14"> 14</option>
+            <option value="15"> 15</option>
+            <option value="16"> 16</option>
+            <option value="17"> 17</option>
+            <option value="18"> 18</option>
+            <option value="19"> 19</option>
+            <option value="20"> 20</option>
+            <option value="21"> 21</option>
+            <option value="22"> 22</option>
+            <option value="23"> 23</option>
+            <option value="24"> 24</option>
+            <option value="25"> 25</option>
+            <option value="26"> 26</option>
+            <option value="27"> 27</option>
+            <option value="28"> 28</option>
+            <option value="29"> 29</option>
+            <option value="30"> 30</option>
+            <option value="31"> 31</option>
+            <option value="32"> 32</option>
+            <option value="33"> 33</option>
+            <option value="34"> 34</option>
+            <option value="35"> 35</option>
+            <option value="36"> 36</option>
+        </select>
+    
+    </div>
+    <div>
+        <label for="mise">Votre mise <br> (en milliers de francs)</label> <br>
+        <input type="number" name="mise" id="mise" min="1">
+        <div>
+            Porte monnaie = <span id="porteMonnaie">100</span> <br> (en milliers de francs) <br>
+        </div>
+        <div>
+            Pertes = <span id="pertes">0</span> (en milliers de francs)
+        </div>
+    </div>
+    <button onclick="go()">Go !</button>
+    <div id="ul">
+        <ul>
+          <li>
+            PRINCIPE DU JEU:
+          </li>
+          <li>
+            Si l'ordinateurtire tire 0 la mise est perdue.
+          </li>
+          <li>
+            Si l'ordinateur tire le numéro du joueur, il rend la mise plus 35fois sa valeur.
+          </li>
+          <li>
+            Si l'ordinateur tire un numéro pair/impair et que vous choississez la meme chose il rend la mise plus une fois
+            sa valeur.
+          </li>
+          <li>
+            <strong>
+              Dans tous les autres cas la mise est perdue
+            </strong>
+          </li>
+        </ul>
+        <div id="flotte"></div>
+      </div>
+  
+      <div id="footer">
+  
+        <div id="date">Copyright © 2020 Top jeu de roulette Tous droits réservés.</div>
+        <div id="date">Conditions d’utilisation | Notre politique | Politique de confidentialité | Informations sur le
+          site | Cookies | Acceptation des cookies </div>
+        <div id="date">Qui sommes-nous? | Annonceurs et agences | Envoyer un jeu | Obtenir des jeux gratuits | Aide &
+          Contact</div>
+  
+        <div id="ps">
+          <span>Suivez-nous sur</span>
+          <img src="facebook.png" id="dr">
+          <img src="twitter-logo.png" id="tz">
+          <img src="pinterest.png" id="tz">
+          <img src="google-logo.png" id="tz">
+          <img src="Logo-Snapchat.png" id="tz">
+        </div>
+  
+      </div>
+  
+  
+
+    <script src="script.js"></script>
+
+    <script>
+    // Initialisation porte monnaie
+var porteMonnaie = 100;
+// Initialisation porte monnaie ordi (pertes joueur)
+var pertes = 0;
+
+function go() {
+  var perdu = false;
+  // Recuperation pari choisi dans le menu select
+  var pari = document.getElementById("pari").value;
+  // Recuperation mise
+  var mise = parseInt(document.getElementById("mise").value);
+
+  if (porteMonnaie == 0) {
+    alert("Votre porte monnaie est vide");
+  } else if (mise > porteMonnaie) {
+    alert("La somme misée est supérieure à celle de votre porte monnaie");
+  } else {
+    // Initialisation gain
+    var gain = 0;
+    // Mise retirée du porte monnaie
+    porteMonnaie -= mise;
+
+    // Entier aléatoire entre 0 et 36
+    var resultat = Math.round(Math.random() * 36);
+
+    if (resultat == 0) {
+      // Si l'ordi tire 0, on perd
+      perdu = true;
+    } else if (resultat == pari) {
+      // Si l'ordi tire le meme nombre, on gagne
+      gain = mise + mise * 35;
+    } else if (
+      (pari == "Pair" && resultat % 2 == 0) ||
+      (pari == "Impair" && resultat % 2 != 0)
+    ) {
+      // Si on choisi 'Pair' et que l'ordi tire un nombre pair, on gagne.
+      // Même chose pour le choix 'Impair'
+      gain = mise + mise;
+    } else {
+      // Dans tous les autres cas, on perd
+      perdu = true;
+    }
+
+    if (perdu) {
+      alert("PERDU ! Resultat = " + resultat + "\nMise Perdue = " + mise);
+      pertes += mise;
+    } else {
+      alert("GAGNÉ ! Resultat = " + resultat + "\nMise Rendue = " + gain);
+      porteMonnaie += gain;
+    }
+    document.getElementById("porteMonnaie").innerText = porteMonnaie;
+    document.getElementById("pertes").innerText = pertes;
+  }
+}
+</script>
+</body>
+

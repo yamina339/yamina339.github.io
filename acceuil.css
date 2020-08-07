@@ -1,0 +1,166 @@
+#entete
+{        
+    height: 55px;
+    background-color:black;
+    color: red;                      
+    font-size: 20px;
+    text-align: center;
+}
+
+ #footer
+{
+    height:150px;
+    margin-bottom: 3px;           
+    margin-top: 200px;         
+    font-size: 20px;
+    background-color:black;
+    font-size: 34px;
+    margin-top: 130px;
+    text-align: center;
+    color: white;
+    text-shadow: 5px;
+    font-family: "Open Sans",Arial,sans-serif;
+      
+} 
+
+
+#accueil
+{
+ margin-left: 200px;
+ margin-right: 7px;
+
+}
+
+
+
+#jeuderoulette
+{
+font-style: brush script mt;
+font-size: 27px;
+float: center;
+width: 10%;
+ margin-top: 50px;
+ margin-left: 3px;
+}
+
+
+#flotte
+{
+float: left;
+ margin-top: 17px;
+
+}
+
+li
+{
+    display: inline;
+
+}
+
+ul
+{
+    margin: 0px;
+    padding : 0px;
+}
+
+
+#date
+{
+text-align: center;
+margin-top: 10px;
+font-size: 17px;
+}
+
+body
+{
+background-attachment: fixed;
+background-image: url("casino.gif");
+ background-size: cover ;
+}
+
+#title
+{
+font-family: "Open Sans",Arial,sans-serif;
+text-align: center;
+color: #fff;
+margin-top: 50px;
+}
+
+#titre
+{
+text-align: center;
+font-size: 60px;
+color:  #fdfefe;
+margin-top: 100px;
+font-family: "Open Sans",Arial,sans-serif;
+}
+
+#start
+{
+ width: 200px;
+margin-left: auto;
+margin-right: auto;
+display: block;
+margin-top: 400px;
+}
+
+
+#consigne
+{
+    height: 200px;
+    background-color:black;
+    color: #a3bbc1;                      
+    font-size: 20px;
+    text-align: center;
+font-size: 34px;
+margin-top: 130px;
+text-align: center;
+color: white;
+text-shadow: 5px;
+font-family: "Open Sans",Arial,sans-serif;
+}
+
+#dr
+{
+width:25px;
+height:25px;
+margin-left: 20px;
+}
+#tz
+{
+width: 25px ;
+height: 25px ;
+margin-left: 8px;
+}
+
+#ps
+{
+margin-left: 15px;
+margin-top: 25px;
+margin-bottom: 5px;
+color: #fff;
+}
+
+
+
+.box
+{
+margin-top:7px;
+text-align: center;
+color: #003f53;
+
+}
+
+
+.jeu
+{
+text-align: center;
+color: #003f53;
+font-size: 22px;
+}
+
+
+#vrai
+{
+float: left;
+}
